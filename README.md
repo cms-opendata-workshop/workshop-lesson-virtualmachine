@@ -1,6 +1,8 @@
-# FIXME Lesson title
+# Lesson on CMS Open Data Virtual Machines
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
+
+This lesson teaches how to setup an official cms open data virtual machine.
 
 This repository generates the corresponding lesson website from [The Carpentries](https://carpentries.org/) repertoire of lessons. 
 
@@ -24,9 +26,7 @@ Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%
 
 Current maintainers of this lesson are 
 
-* FIXME
-* FIXME
-* FIXME
+* Edgar Carrera
 
 
 ## Authors
