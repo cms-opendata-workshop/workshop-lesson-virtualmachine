@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Download and import the CMS CernVM image under VirtualBox ."
 keypoints:
-- "To install the 2011 CMS VM, [download](http://opendata.cern.ch/record/252) the appropriate VM image, import it into VirtualBox and launch it."  
+- "To install the 2011 CMS VM, [download](http://opendata.cern.ch/record/252/files/CMS-OpenData-1.5.3.ova) the appropriate VM image (version 1.5.3), import it into VirtualBox and launch it."  
 ---
 > ## Helpline
 >
@@ -23,18 +23,18 @@ Download the 2011 CMS-specific CernVM image as OVA file from the official [recor
 
 ## Importing the image into VirtualBox
 
-By double clicking the downloaded file, VirtualBox imports the image with ready-to-run settings.  The import could also be triggered directly from the VirtualBox interface.  But before that,
+By double clicking the downloaded file, VirtualBox imports the image with ready-to-run settings.  The import could also be triggered directly from the VirtualBox interface through the `File > Import Appliance` menu option.  But before that,
 
 > make sure you **unselect** *import hard drives as VDI* on the initial import screen.  Otherwise, it is very likely that the VM won't boot.
 {: .testimonial}
 
 ## Launching the CMS VM
 
-After importing, it is very likely that you will have to make at least one last change to the defaul settings before launching:
+After importing, it is likely that you will have to make at least one last change to the default settings before launching:
 
 > Change the Network settings for adapter 2 from *Host-only Adapter* to *NAT*.
 {: .testimonial}
-
+![](../fig/nat.png)
 > ## Invalid settings
 >
 >Also, check for any *Invalid settings detected* at the bottom of the window after you click on the Settings button, and make the appropriate changes following those recommendations.

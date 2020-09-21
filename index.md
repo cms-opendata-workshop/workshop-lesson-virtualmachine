@@ -23,6 +23,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 > In order to complete this lesson and finish installing a CMS virtual machine you will need:
 > - An internet connection.
 > - Administrative privileges on a computer with Windows, Linux or Mac.
+> - A basic understanding of [UNIX shells](https://swcarpentry.github.io/shell-novice/).
 {: .prereq}
 
 > ## Helpline

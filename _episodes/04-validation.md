@@ -1,7 +1,7 @@
 ---
 title: "Test and validate"
 teaching: 10
-exercises: 70 
+exercises: 70
 questions:
 - "What is in the CMS VM?"
 - "How do I test and validate my virtual machine?"
@@ -27,9 +27,11 @@ The VM has a 40G virtual hard disk and a 20G cvmfs cache, which is large enough 
 
 ## Run a simple *demo* for testing and validating
 
-The validation procedure tests that the CMS environment is installed and operational on your virtual machine, and that you have access to the CMS Open Data files.  It also access the conditions data shared area and caches them.  This last action will save us time during the workshop.  These steps also give you a quick introduction to the CMS environment.
+The validation procedure tests that the CMS environment is installed and operational on your virtual machine, and that you have access to the CMS Open Data files.  It also access the conditions data from the shared cvmfs area and caches them.  This last action will save us time during the workshop.  These steps also give you a quick introduction to the CMS environment.
 
 In the VM, open a terminal from the *CMS Shell* **icon from the desktop** (note that the X terminal emulator from an icon bottom-left of the VM screen opens a shell with an operating system incompatible with the CMS software release to be used).
+
+![](../fig/rightshell.png)
 
 Execute the following command; this command builds the local release area (the directory structure) for CMSSW, and only needs to be run once (note that it may take a while):
 
@@ -78,12 +80,32 @@ scram b
 ~~~
 {: .language-bash}
 
-> At this point, you can safely ignore the warning.
+You can safely ignore the warning.
+
+> **IMPORTANT NOTE**: Depending on your system, there could be some issues with the shared clipboard between the host machine and the virtual machine.  This means that it is possible that you cannot copy the instrucitons in this episode directly into your VM session.  Unfortunately, apparently there is no easy solution for this problem so you might have to change the files by hand.  
+>
+> The quickest workaround might be using `ssh` and/or `scp` commands to copy the required files to some other machine that you have access to, from the VM as well as from the host machine.  For instance, if you had access to an `lxplus` computer at cern, you could copy a certain file from the VM to the lxplus computer.  On the VM you could do:
+>
+> ~~~
+> scp myfile.txt myusername@lxplus.cern.ch:.
+> ~~~
+> {: .language-bash}
+>
+> to copy a hypothetical file `myfile.txt` to lxplus, and then on the host
+>
+> ~~~
+> scp myusername@lxplus.cern.ch:myfile.txt .
+> ~~~
+> {: .language-bash}
+>
+> to copy the same file back to your host machine.  Then you can edit the file locally and reverse the process to get it back to your VM.
+>
+> It could also be possible to have direct access from the host to the VM.  This [youtube tutorial](https://www.youtube.com/watch?v=ErzhbUusgdI) might be of help for that option.
 {: .testimonial}
 
 Before launching the job, let's modify the configuration file (do not worry, you will learn about all this stuff in a different [lesson](https://cms-opendata-workshop.github.io/workshop-lesson-cmssw/)) so it is able access a CMS open data file and cache the conditions data.  As it was mentioned, this will save us time later.
 
-Open the `demoanalyzer_cfg.py` file using *vi* editor ([here](https://www.thegeekdiary.com/basic-vi-commands-cheat-sheet/) you can find a good cheatsheet for that editor):
+Open the `demoanalyzer_cfg.py` file using the `vi` editor ([here](https://www.thegeekdiary.com/basic-vi-commands-cheat-sheet/) you can find a good cheatsheet for that editor). Note that other editors like `emacs` or `nano` are also avilable in the VM.
 
 ~~~
 vi Demo/DemoAnalyzer/demoanalyzer_cfg.py
@@ -142,10 +164,18 @@ ln -sf /cvmfs/cms-opendata-conddb.cern.ch/FT_53_LV5_AN1_RUNA.db FT_53_LV5_AN1_RU
 and make sure the cms-opendata-conddb.cern.ch directory has actually expanded in your VM. One way of doing this is executing:
 
 ~~~
-ls -l
 ls -l /cvmfs/
 ~~~
 {: .language-bash}
+
+~~~
+total 18
+drwxr-xr-x  8 root root 4096 Jan 13  2014 cernvm-prod.cern.ch
+drwxr-xr-x 69  989  984 4096 Aug 29  2014 cms.cern.ch
+drwxr-xr-x 14  989  984 4096 Dec 16  2015 cms-opendata-conddb.cern.ch
+drwxr-xr-x  4  989  984 4096 May 28  2014 cvmfs-config.cern.ch
+~~~
+{: .output}
 
 Finally, run the cms executable with our configuration (it may really **take a while**, but the next time you want to run it will be faster):
 ~~~
