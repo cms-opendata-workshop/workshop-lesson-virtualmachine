@@ -1,7 +1,7 @@
 ---
 title: "Test and validate"
 teaching: 10
-exercises: 70
+exercises: 30
 questions:
 - "What is in the CMS VM?"
 - "How do I test and validate my virtual machine?"

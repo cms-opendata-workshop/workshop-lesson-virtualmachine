@@ -1,7 +1,7 @@
 ---
 title: "Recruiting the labor force"
 teaching: 0
-exercises: 20
+exercises: 35
 questions:
 - "How do I install the CMS-specific CernVM image?"
 objectives:

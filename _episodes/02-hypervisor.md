@@ -1,7 +1,7 @@
 ---
 title: "Hiring a hypervisor"
-teaching: 3
-exercises: 7
+teaching: 5
+exercises: 10
 questions:
 - "How do I install VirtualBox?"
 objectives:
