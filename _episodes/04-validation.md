@@ -82,9 +82,11 @@ scram b
 
 You can safely ignore the warning.
 
-> **IMPORTANT NOTE**: Depending on your system, there could be some issues with the shared clipboard between the host machine and the virtual machine.  This means that it is possible that you cannot copy the instrucitons in this episode directly into your VM session.  Unfortunately, apparently there is no easy solution for this problem so you might have to change the files by hand.  
->
-> The quickest workaround might be using `ssh` and/or `scp` commands to copy the required files to some other machine that you have access to, from the VM as well as from the host machine.  For instance, if you had access to an `lxplus` computer at cern, you could copy a certain file from the VM to the lxplus computer.  On the VM you could do:
+> **IMPORTANT NOTE**: Depending on your system, there could be some issues with the shared clipboard between the host machine and the virtual machine.  This means that it is possible that you cannot copy the instructions in this episode directly into your VM session.  The quickest workaround is to use the [text dump file](files/lessonDump.txt) of the lesson. You can download this file directly in your VM, e.g., the `wget`  command, and follow along to copy the necessary commands directly from the text file.
+{: .testimonial}
+
+> ## Alternative solution to the clipboard problem
+> Another possibility is to use the `ssh` and/or `scp` commands to copy the required files to some other machine that you have access to, from the VM as well as from the host machine.  For instance, if you had access to an `lxplus` computer at cern, you could copy a certain file from the VM to the lxplus computer.  On the VM you could do:
 >
 > ~~~
 > scp myfile.txt myusername@lxplus.cern.ch:.
@@ -101,7 +103,7 @@ You can safely ignore the warning.
 > to copy the same file back to your host machine.  Then you can edit the file locally and reverse the process to get it back to your VM.
 >
 > It could also be possible to have direct access from the host to the VM.  This [youtube tutorial](https://www.youtube.com/watch?v=ErzhbUusgdI) might be of help for that option.
-{: .testimonial}
+{: .solution}
 
 Before launching the job, let's modify the configuration file (do not worry, you will learn about all this stuff in a different [lesson](https://cms-opendata-workshop.github.io/workshop-lesson-cmssw/)) so it is able access a CMS open data file and cache the conditions data.  As it was mentioned, this will save us time later.
 
@@ -124,6 +126,8 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/FT_53_LV5_AN1_RUNA.db')
 process.GlobalTag.globaltag = 'FT_53_LV5_AN1::All'
 ```
+
+The lines above are intended to access to the *condition data*, such as the jet-energy corrections, trigger information, etc. You will learn about them in a later lesson.  Right now it is sufficient to mention that it is a good idea to cache these data already so later in the workshop we can speed up the processing.
 
 > ## Take a look at the final validation config file
 >
