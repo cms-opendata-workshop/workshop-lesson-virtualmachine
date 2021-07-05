@@ -1,5 +1,7 @@
 # Lesson on CMS Open Data Virtual Machines
 
+<strong style="color: red;">Warning:</strong>. This repository has been archived and [superseded](https://github.com/cms-opendata-workshop/workshop2021-lesson-virtualmachine); it is no longer maintained.
+
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 
 This lesson teaches how to setup an official cms open data virtual machine.
